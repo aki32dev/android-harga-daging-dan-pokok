@@ -6,5 +6,6 @@
     <string name="strBahan">Bahan pokok</string>
     <string name="strLokasiUser">Lokasi yang dipilih</string>
     <string name="strPilihLokasi">Pilih provinsi</string>
+    <string name="strNoData">Tidak ada data yang ditampilkan. Periksa koneksi internet anda atau coba untuk pilih provinsi lain</string>
 
 </resources>

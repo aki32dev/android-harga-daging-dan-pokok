@@ -59,14 +59,22 @@ class MainActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener {
             }
         }
 
-        mainViewModel.loadingLiveData.observe(this){ loading ->
+        mainViewModel.errorLiveData.observe(this ) { error ->
+            if (error) {
+                binding.tvDate.text = "-"
+                showData(!error)
+            }
+        }
+
+        mainViewModel.loadingLiveData.observe(this) { loading ->
             showShimmer(loading)
         }
 
-        mainViewModel.recipesLiveData.observe(this){ response ->
+        mainViewModel.recipesLiveData.observe(this) { response ->
             dataResponse = response
             dataAdapter.submitList(response.commodity!!)
-            binding.tvDate.text = response.updatedAt
+            binding.tvDate.text = response.updatedAt ?: "-"
+            showData(dataAdapter.itemCount > 0)
         }
     }
 
@@ -118,11 +126,18 @@ class MainActivity : BaseActivity(), SwipeRefreshLayout.OnRefreshListener {
         _binding = null
     }
 
-    private fun showShimmer(parBoolean: Boolean){
+    private fun showShimmer(parBoolean: Boolean) {
         with(binding){
             shimmer.isVisible = parBoolean
             mainFooter.isVisible = !parBoolean
             mainPage.isVisible = !parBoolean
+        }
+    }
+
+    private fun showData(parBoolean: Boolean) {
+        with(binding) {
+            rvData.isVisible = parBoolean
+            cvNoData.isVisible = !parBoolean
         }
     }
 

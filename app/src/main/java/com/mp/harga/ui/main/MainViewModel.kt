@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 class MainViewModel(
     private val mainUseCase: MainUseCase
 ): ViewModel() {
+    val errorLiveData = MutableLiveData<Boolean>()
     val loadingLiveData = MutableLiveData<Boolean>()
     val recipesLiveData = MutableLiveData<DataResponse>()
 
@@ -23,13 +24,16 @@ class MainViewModel(
                         loadingLiveData.value = true
                     }
                     is Status.Success -> {
+                        errorLiveData.value = false
                         loadingLiveData.value = false
                         recipesLiveData.value = response.data!!
                     }
                     is Status.Error -> {
+                        errorLiveData.value = true
                         loadingLiveData.value = false
                     }
                     is Status.HttpError -> {
+                        errorLiveData.value = true
                         loadingLiveData.value = false
                     }
                 }
