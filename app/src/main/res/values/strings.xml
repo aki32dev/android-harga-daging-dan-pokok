@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Harga Daging Dan Pokok</string>
+    <string name="strHargaLokasi">Harga pada setiap provinsi</string>
+    <string name="strDate">Harga pada tanggal</string>
+    <string name="strHarga">Harga</string>
+    <string name="strBahan">Bahan pokok</string>
+    <string name="strLokasiUser">Lokasi yang dipilih</string>
+    <string name="strPilihLokasi">Pilih provinsi</string>
+
+</resources>

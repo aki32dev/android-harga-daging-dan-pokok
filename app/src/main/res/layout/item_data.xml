@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="4dp"
+    android:layout_marginHorizontal="8dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@drawable/province" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProvince"
+                style="@style/body.bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Jawa Timur"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/caption.regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/strHarga"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHarga"
+                style="@style/body.bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Rp24.000"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
