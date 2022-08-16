@@ -7,6 +7,13 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/abdulkharisismail/Documents/Android Keystore/Harga Daging Dan Pokok/key')
+            storePassword 'hargadagingdanpokok'
+            keyPassword 'hargadagingdanpokok'
+        }
+    }
     compileSdk 31
     buildToolsVersion "30.0.3"
 
@@ -34,7 +41,7 @@ android {
         getByName("debug") {
             applicationIdSuffix ".debug"
             debuggable true
-            manifestPlaceholders = [appName: "[D] Harga"]
+            manifestPlaceholders = [appName: "[D] Harga Daging Dan Pokok"]
         }
     }
 
